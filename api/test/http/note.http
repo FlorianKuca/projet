@@ -1,0 +1,28 @@
+@baseURL = http://localhost:3000
+### GET all notes
+GET {{baseURL}}/notes
+
+### Get a note by ID
+GET {{baseURL}}/notes/2
+### Add a new notes
+POST {{baseURL}}/notes
+Content-Type: application/json
+
+{
+    "title": "Meeting Notes",
+    "content": "Notes from the meeting with the development team.",
+    "tags": ["meeting", "development"]
+}
+
+### Update a note by ID
+PATCH {{baseURL}}/notes/2
+Content-Type: application/json
+
+{
+    "title": "Updated Meeting Notes",
+    "content": "Updated notes from the meeting with the development team.",
+    "tags": ["meeting", "development", "update"]
+}
+
+### Delete a note by ID
+DELETE {{baseURL}}/notes/6

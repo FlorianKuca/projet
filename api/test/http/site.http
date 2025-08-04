@@ -1,0 +1,29 @@
+@baseURL = http://localhost:3000
+### GET all sites
+GET {{baseURL}}/sites
+
+### Get a site by ID
+GET {{baseURL}}/sites/2
+
+### Add a new site
+POST {{baseURL}}/sites
+Content-Type: application/json
+
+{
+    "title": "My Personal Blog",
+    "url": "https://mypersonalblog.com",
+    "description": "A blog about my personal experiences and thoughts on various topics."
+}
+
+### Update a site by ID
+PATCH {{baseURL}}/sites/2
+Content-Type: application/json
+
+{
+    "title": "Updated Personal Blog",
+    "url": "https://updatedmypersonalblog.com",
+    "description": "An updated description of my personal blog."
+}
+
+### Delete a site by ID
+DELETE {{baseURL}}/sites/3

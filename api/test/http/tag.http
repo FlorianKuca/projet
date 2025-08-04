@@ -1,0 +1,26 @@
+@baseURL = http://localhost:3000
+### GET all tags
+GET {{baseURL}}/tags
+
+### Get a tag by ID
+GET {{baseURL}}/tags/5
+### Add a new tag
+POST {{baseURL}}/tags
+Content-Type: application/json
+
+{
+    "name": "Technology",
+    "color": "#ff5733"
+}
+
+### Update a tag by ID
+PATCH {{baseURL}}/tags/5
+Content-Type: application/json
+
+{
+    "name": "Updated Technology",
+    "color": "#33ff57"
+}
+
+### Delete a tag by ID
+DELETE {{baseURL}}/tags/6
