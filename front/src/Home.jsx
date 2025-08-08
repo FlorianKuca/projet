@@ -1,28 +1,25 @@
-import axios from 'axios';
-import { useEffect, useState } from 'react';
+import Note from './Note';
+import Tag from './Tag';
+import User from './User';
 
 export default function Home() {
-  const [array, setArray] = useState([]);
-  const fetchData = async () => {
-      const response = await axios.get('http://localhost:3000/notes');
-      setArray(response.data);
-  }
-  useEffect(() => {
-      fetchData();
-  }, []);
   return (
     <div className="home">
-      <h1>Welcome to the Home Page</h1>
-      <ul className="rounded-2xl shadow-lg p-5 bg-white space-y-3">
-        {
-          array.map((note,index) => (
-            <li key={index} className="p-3 border-b">
-              <h2 className="text-xl font-bold">{note.title}</h2>
-              <p>{note.content}</p>
-            </li>
-          ))
-        }
-      </ul>
+      <h1 className="text-2xl text-center my-5">Welcome to the Home Page</h1>
+      
+      {/* Section Notes */}
+      <Note />
+      {/* Séparateur */}
+      <div className="divider my-8"></div>
+      {/* Section Users */}
+      <User />
+      {/* Séparateur */}
+      <div className="divider my-8"></div>
+      {/* Section Tags */}
+      <Tag />
+
+      
+
     </div>
   );
 }
